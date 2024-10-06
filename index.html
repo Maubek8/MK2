@@ -11,15 +11,37 @@
         <h1>Protocolo MK - Atleta MMA</h1>
     </header>
 
-    <h2>Tabela Detalhada do Protocolo</h2>
+    <!-- Informações do Atleta -->
+    <form id="athlete-info">
+        <label for="name">Nome do Atleta:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age">
+        
+        <label for="exam-date">Data do Exame:</label>
+        <input type="date" id="exam-date" name="exam-date">
+    </form>
+
+    <!-- Cronômetro -->
+    <div id="timer-container" style="text-align: center; margin: 20px;">
+        <p id="timer">00:00</p>
+        <button id="startButton">Iniciar Protocolo Preliminar</button>
+        <button id="analyzeButton">Analisar</button>
+        <button id="printButton" style="display:none;">Imprimir Protocolo</button>
+    </div>
+
+    <h2>Tabela Detalhada do Protocolo MK - Atleta MMA</h2>
     <table id="mma-table">
         <thead>
             <tr>
                 <th>Fase</th>
                 <th>Tempo (min)</th>
                 <th>Cadência (bpm)</th>
-                <th>FC Anotada</th>
-                <th>PSE Anotada</th>
+                <th>FC Anotada (Preliminar)</th>
+                <th>PSE Anotada (Preliminar)</th>
+                <th>FC do Protocolo MK</th>
+                <th>PSE do Protocolo MK</th>
                 <th>PA (mmHg)</th>
                 <th>VO2 (ml/kg/min)</th>
                 <th>SO2 (%)</th>
@@ -31,11 +53,13 @@
         <tbody>
             <tr>
                 <td>Aquecimento</td>
-                <td>2</td>
-                <td>60</td>
-                <td><input type="number"></td>
-                <td><input type="number"></td>
-                <td></td>
+                <td style="text-align: center;">2</td>
+                <td style="text-align: center;">60</td>
+                <td><input type="number" id="fc-aquecimento-preliminar"></td>
+                <td><input type="number" id="pse-aquecimento-preliminar"></td>
+                <td><input type="number" id="fc-aquecimento-mk"></td>
+                <td><input type="number" id="pse-aquecimento-mk"></td>
+                <td>(PA)</td>
                 <td></td>
                 <td></td>
                 <td></td>
