@@ -1,72 +1,124 @@
-// Iniciar cronômetro
-let timerInterval;
-let seconds = 0;
-
-// Função para iniciar o cronômetro
-function startTimer() {
-    seconds = 0; // Resetar o cronômetro
-    timerInterval = setInterval(function() {
-        seconds++;
-        const minutes = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        document.getElementById('timer').innerText = `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    }, 1000);
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF; /* Cor de fundo branca */
+    color: #333333; /* Cor do texto padrão */
+    margin: 0;
+    padding: 0;
 }
 
-// Função para parar o cronômetro
-function stopTimer() {
-    clearInterval(timerInterval);
+/* Cabeçalho */
+header {
+    background-color: #000000; /* Fundo preto para cabeçalho */
+    padding: 20px;
+    text-align: center;
 }
 
-// Adicionar evento de clique no botão de iniciar
-document.getElementById('startButton').addEventListener('click', function() {
-    startTimer();
-});
-
-// Analisar dados da tabela preliminar
-document.getElementById('analyzeButton').addEventListener('click', function() {
-    const rows = document.querySelectorAll('#preliminary-table tbody tr');
-    
-    rows.forEach((row, index) => {
-        const fc = row.querySelectorAll('input')[0].value || 'N/A';
-        const pse = row.querySelectorAll('input')[1].value || 'N/A';
-
-        // Atualiza a tabela do Protocolo MMA
-        if (index === 0) { // Aquecimento
-            document.getElementById(`fc-aquecimento`).value = fc;
-            document.getElementById(`pse-aquecimento`).value = pse;
-        } else if (index === 1) { // Incremento 1
-            document.getElementById(`fc-incremento1`).value = fc;
-            document.getElementById(`pse-incremento1`).value = pse;
-        } else if (index === 2) { // Incremento 2
-            document.getElementById(`fc-incremento2`).value = fc;
-            document.getElementById(`pse-incremento2`).value = pse;
-        } else if (index === 3) { // Incremento 3
-            document.getElementById(`fc-incremento3`).value = fc;
-            document.getElementById(`pse-incremento3`).value = pse;
-        } else if (index === 4) { // Resfriamento
-            document.getElementById(`fc-resfriamento`).value = fc;
-            document.getElementById(`pse-resfriamento`).value = pse;
-        }
-    });
-
-    // Exibir o botão de imprimir
-    document.getElementById('printButton').style.display = 'inline-block';
-});
-
-// Função para mostrar o gráfico em pop-up
-function showGraph() {
-    const popUp = document.getElementById('graph-popup');
-    popUp.style.display = 'block';
+header h1 {
+    color: #FFCC00; /* Texto amarelo */
+    font-size: 24px;
 }
 
-// Função para fechar o pop-up
-function closeGraph() {
-    const popUp = document.getElementById('graph-popup');
-    popUp.style.display = 'none';
+/* Formulário de Informações do Atleta */
+form#athlete-info {
+    padding: 20px;
+    background-color: #F7F7F7; /* Fundo cinza claro */
+    border: 1px solid #E0E0E0;
+    margin: 20px auto;
+    max-width: 600px;
 }
 
-// Adicionar evento de clique no botão de imprimir
-document.getElementById('printButton').addEventListener('click', function() {
-    window.print();
-});
+form#athlete-info label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #000000; /* Texto preto */
+}
+
+form#athlete-info input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #E0E0E0; /* Borda leve */
+    margin-bottom: 10px;
+}
+
+/* Cronômetro */
+#timer-container {
+    text-align: center;
+    margin: 20px;
+}
+
+#timer {
+    font-size: 24px;
+    color: #FF0000; /* Cor inicial do cronômetro */
+}
+
+/* Tabelas */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #000000; /* Fundo preto para cabeçalho */
+    color: #FFFFFF; /* Texto branco */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F7F7F7; /* Fundo cinza claro para linhas pares */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #FFFFFF; /* Fundo branco para linhas ímpares */
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #E0E0E0; /* Borda leve */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Botões */
+button {
+    background-color: #FFCC00; /* Amarelo para botões */
+    color: #000000; /* Texto preto */
+    border: none;
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E6B800; /* Amarelo mais escuro ao passar o mouse */
+}
+
+button:disabled {
+    background-color: #F7F7F7; /* Fundo claro para botões desativados */
+    color: #A0A0A0; /* Texto cinza */
+    cursor: not-allowed; /* Cursor de não permitido */
+}
+
+/* Pop-Up do Gráfico */
+#graph-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white; /* Fundo branco */
+    border: 1px solid #E0E0E0; /* Borda leve */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    z-index: 1000; /* Para garantir que fique em cima de outros elementos */
+    padding: 20px;
+}
+
+/* Rodapé (Footer) */
+footer {
+    background-color: #000000; /* Fundo preto para rodapé */
+    color: #FFFFFF; /* Texto branco */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
