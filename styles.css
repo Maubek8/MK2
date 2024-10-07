@@ -1,124 +1,88 @@
 /* Corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #FFFFFF; /* Cor de fundo branca */
-    color: #333333; /* Cor do texto padrão */
+    background-color: #FFFFFF;
+    color: #333333;
     margin: 0;
     padding: 0;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #000000; /* Fundo preto para cabeçalho */
+    background-color: #000000;
     padding: 20px;
     text-align: center;
 }
 
 header h1 {
-    color: #FFCC00; /* Texto amarelo */
-    font-size: 24px;
+    color: #FFCC00;
+    font-size: 28px;
 }
 
-/* Formulário de Informações do Atleta */
+/* Formulário */
 form#athlete-info {
     padding: 20px;
-    background-color: #F7F7F7; /* Fundo cinza claro */
+    background-color: #F7F7F7;
     border: 1px solid #E0E0E0;
     margin: 20px auto;
     max-width: 600px;
-}
-
-form#athlete-info label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #000000; /* Texto preto */
-}
-
-form#athlete-info input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #E0E0E0; /* Borda leve */
-    margin-bottom: 10px;
+    border-radius: 8px;
 }
 
 /* Cronômetro */
 #timer-container {
     text-align: center;
     margin: 20px;
-}
-
-#timer {
-    font-size: 24px;
-    color: #FF0000; /* Cor inicial do cronômetro */
+    font-size: 36px;
+    color: #FF0000; /* Cor padrão do cronômetro */
 }
 
 /* Tabelas */
 table {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
+    overflow-x: auto;
 }
 
 thead {
-    background-color: #000000; /* Fundo preto para cabeçalho */
-    color: #FFFFFF; /* Texto branco */
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #F7F7F7; /* Fundo cinza claro para linhas pares */
+    background-color: #F7F7F7;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #FFFFFF; /* Fundo branco para linhas ímpares */
+    background-color: #FFFFFF;
 }
 
 td, th {
     padding: 10px;
-    border: 1px solid #E0E0E0; /* Borda leve */
-    text-align: center; /* Centraliza o texto */
+    border: 1px solid #E0E0E0;
+    text-align: center;
 }
 
 /* Botões */
 button {
-    background-color: #FFCC00; /* Amarelo para botões */
-    color: #000000; /* Texto preto */
+    background-color: #FFCC00;
+    color: #000000;
     border: none;
     padding: 10px 20px;
-    margin: 20px;
+    margin: 10px;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #E6B800; /* Amarelo mais escuro ao passar o mouse */
+    background-color: #E6B800;
 }
 
+/* Botão desabilitado */
 button:disabled {
-    background-color: #F7F7F7; /* Fundo claro para botões desativados */
-    color: #A0A0A0; /* Texto cinza */
-    cursor: not-allowed; /* Cursor de não permitido */
-}
-
-/* Pop-Up do Gráfico */
-#graph-popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white; /* Fundo branco */
-    border: 1px solid #E0E0E0; /* Borda leve */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
-    z-index: 1000; /* Para garantir que fique em cima de outros elementos */
-    padding: 20px;
-}
-
-/* Rodapé (Footer) */
-footer {
-    background-color: #000000; /* Fundo preto para rodapé */
-    color: #FFFFFF; /* Texto branco */
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    background-color: #F7F7F7;
+    color: #A0A0A0;
+    cursor: not-allowed;
 }
