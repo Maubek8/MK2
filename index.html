@@ -25,7 +25,8 @@
 
     <!-- Cronômetro -->
     <div id="timer-container">
-        <p id="timer">00:00</p>
+        <p id="timer">00:00:00</p> <!-- Agora com horas, minutos e segundos -->
+        <p id="phase-message" style="display: none;"></p> <!-- Mensagem de fase atual e avisos -->
         <button id="startButton">Iniciar Protocolo</button>
         <button id="analyzeButton">Analisar</button>
         <button id="printButton" style="display:none;">Imprimir Protocolo</button>
@@ -136,16 +137,15 @@
                 <td><input type="number" id="pse-resfriamento-mk"></td>
                 <td><input type="number" id="pa-resfriamento"></td>
                 <td><input type="number" id="vo2-resfriamento"></td>
+                <td><input type="number
                 <td><input type="number" id="so2-resfriamento"></td>
                 <td><input type="number" id="feo2-resfriamento"></td>
                 <td>115-135</td>
                 <td>9-10 (Leve)</td>
             </tr>
         </tbody>
-           </tbody>
     </table>
 
     <script src="script.js"></script>
 </body>
 </html>
-
