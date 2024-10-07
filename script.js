@@ -1,6 +1,7 @@
 let timerInterval;
 let seconds = 0;
 let currentPhase = 0; // Fase do protocolo (0: Aquecimento, 1: Incremento 1, etc.)
+let isRunning = false;
 
 // Fases do protocolo
 const phases = [
@@ -13,6 +14,8 @@ const phases = [
 
 // Função para iniciar o cronômetro
 function startTimer() {
+    if (isRunning) return; // Evitar múltiplos cronômetros rodando
+    isRunning = true;
     clearInterval(timerInterval);
     seconds = 0;
     currentPhase = 0; // Resetar para o aquecimento
@@ -33,20 +36,37 @@ function startTimer() {
             if (currentPhase < phases.length) {
                 seconds = 0;
                 updatePhase(); // Atualizar fase e cor
+                // Mostrar aviso de preparação
+                showPhaseMessage(`Prepare-se para ${phases[currentPhase].name}`);
             } else {
                 clearInterval(timerInterval); // Parar o cronômetro
+                isRunning = false;
+                showPhaseMessage("Protocolo concluído!");
             }
         }
     }, 1000); // Atualizar a cada segundo
 }
 
-// Função para atualizar a cor da fase
+// Função para atualizar a cor da fase e exibir fase atual
 function updatePhase() {
     document.getElementById('timer').style.color = phases[currentPhase].color;
+    document.getElementById('phase-message').innerText = `Fase Atual: ${phases[currentPhase].name}`;
 }
 
-// Função para analisar os dados (simples exemplo)
+// Função para exibir uma mensagem sobre a fase atual
+function showPhaseMessage(message) {
+    const phaseMessageElement = document.getElementById('phase-message');
+    phaseMessageElement.innerText = message;
+    phaseMessageElement.style.display = 'block';
+    setTimeout(() => {
+        phaseMessageElement.style.display = 'none';
+    }, 5000); // Ocultar após 5 segundos
+}
+
+// Função para analisar os dados e parar o cronômetro
 function analyzeData() {
+    clearInterval(timerInterval); // Parar o cronômetro
+    isRunning = false; // Garantir que o cronômetro pare
     document.getElementById('printButton').style.display = 'inline-block';
     alert("Dados analisados. Pronto para impressão.");
 }
@@ -60,4 +80,3 @@ function printProtocol() {
 document.getElementById('startButton').addEventListener('click', startTimer);
 document.getElementById('analyzeButton').addEventListener('click', analyzeData);
 document.getElementById('printButton').addEventListener('click', printProtocol);
-
