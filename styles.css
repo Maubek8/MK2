@@ -37,12 +37,21 @@ form#athlete-info {
     color: #FF0000; /* Cor padrão do cronômetro */
 }
 
+/* Mensagem de fase */
+#phase-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FF0000;
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+}
+
 /* Tabelas */
 table {
     width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
-    overflow-x: auto;
 }
 
 thead {
@@ -62,6 +71,12 @@ td, th {
     padding: 10px;
     border: 1px solid #E0E0E0;
     text-align: center;
+}
+
+/* Ajustar a largura das colunas */
+table th, table td {
+    padding: 8px;
+    width: 80px; /* Ajustar a largura para caber melhor */
 }
 
 /* Botões */
@@ -85,4 +100,10 @@ button:disabled {
     background-color: #F7F7F7;
     color: #A0A0A0;
     cursor: not-allowed;
+}
+
+/* Ajustar a margem do conteúdo */
+#mma-table {
+    margin: 20px auto;
+    width: 95%;
 }
