@@ -1,112 +1,151 @@
-<h2>Tabela Detalhada do Protocolo MK - Atleta MMA</h2>
-<table id="mma-table">
-    <thead>
-        <tr>
-            <th>Fase</th>
-            <th>Tempo (min)</th>
-            <th>Cadência (bpm)</th>
-            <th>FC Anotada (Preliminar)</th>
-            <th>PSE Anotada (Preliminar)</th>
-            <th>FC do Protocolo MK</th>
-            <th>PSE do Protocolo MK</th>
-            <th>PA (mmHg)</th>
-            <th>VO2 (ml/kg/min)</th>
-            <th>SO2 (%)</th>
-            <th>FEO2 (%)</th>
-            <th>FC Estimada (bpm)</th>
-            <th>PSE (Escala de Borg)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Aquecimento</td>
-            <td style="text-align: center;">2</td>
-            <td style="text-align: center;">60</td>
-            <td><input type="number" id="fc-aquecimento-preliminar"></td>
-            <td><input type="number" id="pse-aquecimento-preliminar"></td>
-            <td><input type="number" id="fc-aquecimento-mk"></td>
-            <td><input type="number" id="pse-aquecimento-mk"></td>
-            <td><input type="number" id="pa-aquecimento"></td>
-            <td><input type="number" id="vo2-aquecimento"></td>
-            <td><input type="number" id="so2-aquecimento"></td>
-            <td><input type="number" id="feo2-aquecimento"></td>
-            <td>95-115</td>
-            <td>6-10 (Leve)</td>
-        </tr>
-        <tr>
-            <td>Incremento 1</td>
-            <td style="text-align: center;">1</td>
-            <td style="text-align: center;">70</td>
-            <td><input type="number" id="fc-incremento1-preliminar"></td>
-            <td><input type="number" id="pse-incremento1-preliminar"></td>
-            <td><input type="number" id="fc-incremento1-mk"></td>
-            <td><input type="number" id="pse-incremento1-mk"></td>
-            <td><input type="number" id="pa-incremento1"></td>
-            <td><input type="number" id="vo2-incremento1"></td>
-            <td><input type="number" id="so2-incremento1"></td>
-            <td><input type="number" id="feo2-incremento1"></td>
-            <td>115-135</td>
-            <td>11-13 (Moderado)</td>
-        </tr>
-        <tr>
-            <td>Incremento 2</td>
-            <td style="text-align: center;">1</td>
-            <td style="text-align: center;">80</td>
-            <td><input type="number" id="fc-incremento2-preliminar"></td>
-            <td><input type="number" id="pse-incremento2-preliminar"></td>
-            <td><input type="number" id="fc-incremento2-mk"></td>
-            <td><input type="number" id="pse-incremento2-mk"></td>
-            <td><input type="number" id="pa-incremento2"></td>
-            <td><input type="number" id="vo2-incremento2"></td>
-            <td><input type="number" id="so2-incremento2"></td>
-            <td><input type="number" id="feo2-incremento2"></td>
-            <td>135-153</td>
-            <td>13-14 (Algo Difícil)</td>
-        </tr>
-        <tr>
-            <td>Incremento 3</td>
-            <td style="text-align: center;">1</td>
-            <td style="text-align: center;">90</td>
-            <td><input type="number" id="fc-incremento3-preliminar"></td>
-            <td><input type="number" id="pse-incremento3-preliminar"></td>
-            <td><input type="number" id="fc-incremento3-mk"></td>
-            <td><input type="number" id="pse-incremento3-mk"></td>
-            <td><input type="number" id="pa-incremento3"></td>
-            <td><input type="number" id="vo2-incremento3"></td>
-            <td><input type="number" id="so2-incremento3"></td>
-            <td><input type="number" id="feo2-incremento3"></td>
-            <td>153-162</td>
-            <td>15-16 (Difícil)</td>
-        </tr>
-        <tr>
-            <td>Incremento 4 (Opcional)</td>
-            <td style="text-align: center;">1</td>
-            <td style="text-align: center;">100</td>
-            <td><input type="number" id="fc-incremento4-preliminar"></td>
-            <td><input type="number" id="pse-incremento4-preliminar"></td>
-            <td><input type="number" id="fc-incremento4-mk"></td>
-            <td><input type="number" id="pse-incremento4-mk"></td>
-            <td><input type="number" id="pa-incremento4"></td>
-            <td><input type="number" id="vo2-incremento4"></td>
-            <td><input type="number" id="so2-incremento4"></td>
-            <td><input type="number" id="feo2-incremento4"></td>
-            <td>162-172</td>
-            <td>17-18 (Muito Difícil)</td>
-        </tr>
-        <tr>
-            <td>Resfriamento</td>
-            <td style="text-align: center;">2</td>
-            <td style="text-align: center;">60</td>
-            <td><input type="number" id="fc-resfriamento-preliminar"></td>
-            <td><input type="number" id="pse-resfriamento-preliminar"></td>
-            <td><input type="number" id="fc-resfriamento-mk"></td>
-            <td><input type="number" id="pse-resfriamento-mk"></td>
-            <td><input type="number" id="pa-resfriamento"></td>
-            <td><input type="number" id="vo2-resfriamento"></td>
-            <td><input type="number" id="so2-resfriamento"></td>
-            <td><input type="number" id="feo2-resfriamento"></td>
-            <td>115-135</td>
-            <td>9-10 (Leve)</td>
-        </tr>
-    </tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo MK - Atleta MMA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Protocolo MK - Atleta MMA</h1>
+    </header>
+
+    <!-- Informações do Atleta -->
+    <form id="athlete-info">
+        <label for="name">Nome do Atleta:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="age">Idade:</label>
+        <input type="number" id="age" name="age" required>
+        
+        <label for="exam-date">Data do Exame:</label>
+        <input type="date" id="exam-date" name="exam-date" required>
+    </form>
+
+    <!-- Cronômetro -->
+    <div id="timer-container">
+        <p id="timer">00:00</p>
+        <button id="startButton">Iniciar Protocolo</button>
+        <button id="analyzeButton">Analisar</button>
+        <button id="printButton" style="display:none;">Imprimir Protocolo</button>
+    </div>
+
+    <h2>Tabela Detalhada do Protocolo MK - Atleta MMA</h2>
+    <table id="mma-table">
+        <thead>
+            <tr>
+                <th>Fase</th>
+                <th>Tempo (min)</th>
+                <th>Cadência (bpm)</th>
+                <th>FC Anotada (Preliminar)</th>
+                <th>PSE Anotada (Preliminar)</th>
+                <th>FC do Protocolo MK</th>
+                <th>PSE do Protocolo MK</th>
+                <th>PA (mmHg)</th>
+                <th>VO2 (ml/kg/min)</th>
+                <th>SO2 (%)</th>
+                <th>FEO2 (%)</th>
+                <th>FC Estimada (bpm)</th>
+                <th>PSE (Escala de Borg)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Aquecimento</td>
+                <td style="text-align: center;">2</td>
+                <td><input type="number" value="60" id="cadencia-aquecimento"></td>
+                <td><input type="number" id="fc-aquecimento-preliminar"></td>
+                <td><input type="number" id="pse-aquecimento-preliminar"></td>
+                <td><input type="number" id="fc-aquecimento-mk"></td>
+                <td><input type="number" id="pse-aquecimento-mk"></td>
+                <td><input type="number" id="pa-aquecimento"></td>
+                <td><input type="number" id="vo2-aquecimento"></td>
+                <td><input type="number" id="so2-aquecimento"></td>
+                <td><input type="number" id="feo2-aquecimento"></td>
+                <td>95-115</td>
+                <td>6-10 (Leve)</td>
+            </tr>
+            <tr>
+                <td>Incremento 1</td>
+                <td style="text-align: center;">1</td>
+                <td><input type="number" value="70" id="cadencia-incremento1"></td>
+                <td><input type="number" id="fc-incremento1-preliminar"></td>
+                <td><input type="number" id="pse-incremento1-preliminar"></td>
+                <td><input type="number" id="fc-incremento1-mk"></td>
+                <td><input type="number" id="pse-incremento1-mk"></td>
+                <td><input type="number" id="pa-incremento1"></td>
+                <td><input type="number" id="vo2-incremento1"></td>
+                <td><input type="number" id="so2-incremento1"></td>
+                <td><input type="number" id="feo2-incremento1"></td>
+                <td>115-135</td>
+                <td>11-13 (Moderado)</td>
+            </tr>
+            <tr>
+                <td>Incremento 2</td>
+                <td style="text-align: center;">1</td>
+                <td><input type="number" value="80" id="cadencia-incremento2"></td>
+                <td><input type="number" id="fc-incremento2-preliminar"></td>
+                <td><input type="number" id="pse-incremento2-preliminar"></td>
+                <td><input type="number" id="fc-incremento2-mk"></td>
+                <td><input type="number" id="pse-incremento2-mk"></td>
+                <td><input type="number" id="pa-incremento2"></td>
+                <td><input type="number" id="vo2-incremento2"></td>
+                <td><input type="number" id="so2-incremento2"></td>
+                <td><input type="number" id="feo2-incremento2"></td>
+                <td>135-153</td>
+                <td>13-14 (Algo Difícil)</td>
+            </tr>
+            <tr>
+                <td>Incremento 3</td>
+                <td style="text-align: center;">1</td>
+                <td><input type="number" value="90" id="cadencia-incremento3"></td>
+                <td><input type="number" id="fc-incremento3-preliminar"></td>
+                <td><input type="number" id="pse-incremento3-preliminar"></td>
+                <td><input type="number" id="fc-incremento3-mk"></td>
+                <td><input type="number" id="pse-incremento3-mk"></td>
+                <td><input type="number" id="pa-incremento3"></td>
+                <td><input type="number" id="vo2-incremento3"></td>
+                <td><input type="number" id="so2-incremento3"></td>
+                <td><input type="number" id="feo2-incremento3"></td>
+                <td>153-162</td>
+                <td>15-16 (Difícil)</td>
+            </tr>
+            <tr>
+                <td>Incremento 4 (Opcional)</td>
+                <td style="text-align: center;">1</td>
+                <td><input type="number" value="100" id="cadencia-incremento4"></td>
+                <td><input type="number" id="fc-incremento4-preliminar"></td>
+                <td><input type="number" id="pse-incremento4-preliminar"></td>
+                <td><input type="number" id="fc-incremento4-mk"></td>
+                <td><input type="number" id="pse-incremento4-mk"></td>
+                <td><input type="number" id="pa-incremento4"></td>
+                <td><input type="number" id="vo2-incremento4"></td>
+                <td><input type="number" id="so2-incremento4"></td>
+                <td><input type="number" id="feo2-incremento4"></td>
+                <td>162-172</td>
+                <td>17-18 (Muito Difícil)</td>
+            </tr>
+            <tr>
+                <td>Resfriamento</td>
+                <td style="text-align: center;">2</td>
+                <td><input type="number" value="60" id="cadencia-resfriamento"></td>
+                <td><input type="number" id="fc-resfriamento-preliminar"></td>
+                <td><input type="number" id="pse-resfriamento-preliminar"></td>
+                <td><input type="number" id="fc-resfriamento-mk"></td>
+                <td><input type="number" id="pse-resfriamento-mk"></td>
+                <td><input type="number" id="pa-resfriamento"></td>
+                <td><input type="number" id="vo2-resfriamento"></td>
+                <td><input type="number" id="so2-resfriamento"></td>
+                <td><input type="number" id="feo2-resfriamento"></td>
+                <td>115-135</td>
+                <td>9-10 (Leve)</td>
+            </tr>
+        </tbody>
+           </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
